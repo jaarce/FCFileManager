@@ -1109,7 +1109,7 @@
     }
     else if([content conformsToProtocol:@protocol(NSCoding)])
     {
-        [NSKeyedArchiver archiveRootObject:content toFile:absolutePath];
+        [NSKeyedArchiver archivedDataWithRootObject:content requiringSecureCoding:NO error:nil];
     }
     else {
         [NSException raise:@"Invalid content type" format:@"content of type %@ is not handled.", NSStringFromClass([content class])];
